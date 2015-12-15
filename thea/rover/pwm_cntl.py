@@ -53,55 +53,14 @@ PWM.start(c, 0, 1000)
 
 while(True):
 	inq = connection.recv(16)	
-	#inq = raw_input()
+	# __Message Format___ : "(left_state,right_state)"
 	print '\nBB > Raw :', inq
 	if len(inq) <= 7 and len(inq) >= 5:
 		le,ri = inq[1:-1].split(',')	
 		print '\nBB > (%d,%d)'%(int(le),int(ri))
 		PWM.set_duty_cycle(a,int(le))
 		PWM.set_duty_cycle(c,int(ri))
-	'''
-	if (inq=='w'):
-		print "forward"
-		gpio.output(b, gpio.LOW)
-		gpio.output(a, gpio.HIGH)
-
-		gpio.output(c, gpio.HIGH)
-		gpio.output(d, gpio.LOW)
 	
-	elif (inq=='s'):
-
-		print "reverse"
-        	gpio.output(a, gpio.LOW)
-        	gpio.output(b, gpio.HIGH)
-
-        	gpio.output(d, gpio.HIGH)
-        	gpio.output(c, gpio.LOW)
-
-	elif (inq=='a'):
-		print "left"
-        	gpio.output(a, gpio.LOW)
-       		gpio.output(b, gpio.HIGH)
-
-        	gpio.output(c, gpio.HIGH)
-        	gpio.output(d, gpio.LOW)
-		sleep(0.2)
-		halt()
-
-	elif (inq=='d'):
-		print "right"
-        	gpio.output(b, gpio.LOW)
-       		gpio.output(a, gpio.HIGH)
-
-        	gpio.output(d, gpio.HIGH)
-        	gpio.output(c, gpio.LOW)
-		sleep(0.2)
-		halt()
-	
-	else:
-		print "halt"
-		halt()
-	'''
 	
 gpio.cleanup()
 
