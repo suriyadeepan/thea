@@ -1,0 +1,5 @@
+*.hlpr
+*.pyc
+pickled_dict
+*.pdf
+.ipynb_checkpoints
