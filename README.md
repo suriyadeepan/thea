@@ -21,7 +21,7 @@ In #00, we make use of a simple mobile robot, without additional sensors or actu
 
 The actual processing of data and issuing of high level (steering angle) commands are taken care of, by a PC with a powerful GPU, connected to the same network. This is where, a convolnet of 6 layers is implemented in theano. The images are acquired from the smartphone, which is connected to the same network through WIFI. Each input to the convolnet is a collection of 5 (*change this number*) consecutive grayscale images,  each passed through low pass and high pass filters to obtain 10 images, cascaded across depth dimension. If the image is of size 480x270, input to convolnet becomes 480x270x10. 
 
-*Insert convolnet architecture image below*
+![ZeroNet](https://raw.githubusercontent.com/suriyadeepan/thea/master/img/arch_zeronet.png)
 
 This input is propagated through 4 layers of convolution and pooling, followed by a layer of 1000 neurons fully connected to the logical regression layer. The output of the logical regression layer can be of two types:
 
