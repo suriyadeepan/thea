@@ -1,5 +1,7 @@
 # Thea
 
+[![Join the chat at https://gitter.im/suriyadeepan/thea](https://badges.gitter.im/suriyadeepan/thea.svg)](https://gitter.im/suriyadeepan/thea?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 *theano --> thea*
 
 This project attempts to incorporate deep architectures and deep learning methods in robotics. 
