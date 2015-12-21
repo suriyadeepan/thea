@@ -8,14 +8,14 @@ This project attempts to incorporate deep architectures and deep learning method
 
 ## Experiment #00
 
-Inspired by [1](http://www.cs.nyu.edu/~yann/research/lagr/), Convolutional Neural Networks are applied for vision : image understanding and decision making(steering), to achieve the following high level goals:
+Inspired by [[1][(http://www.cs.nyu.edu/~yann/research/lagr/), Convolutional Neural Networks are applied for vision : image understanding and decision making(steering), to achieve the following high level goals:
 
 * Autonomous Off-road navigation
 * Obstacle Avoidance
 * Map Building
 * Finding traversable regions
 
-In #00, we make use of a simple mobile robot, without additional sensors or actuators for controlling the orientation or position of the bot. Pulse Width modulation(PWM) is used for controlling the motors individually, to achieve precise (precise enough) control over the orientation of the bot. An android smartphone is mounted on the bot, which streams video at a rate of *x* frames per second, with resolution of *y x z*. A raspberry mounted on the bot takes low level control of the motors (through the motor driver IC : 293d). The RPi is responsible for managing the orientation of the bot, through PWM on its GPIO pins. 
+In #00, we make use of a simple mobile robot, without additional sensors or actuators for controlling the orientation or position of the bot. Pulse Width modulation(PWM) is used for controlling the motors individually, to achieve precise (precise enough) control over the orientation of the bot. An android smartphone is mounted on the bot, which streams video at a rate of *x* frames per second, with resolution of *y x z*. A Beaglebone mounted on the bot takes low level control of the motors (through the motor driver IC : 293d). The Beaglebone is responsible for managing the orientation of the bot, through PWM on its GPIO pins. 
 
 *Insert image of bot below*
 
@@ -29,3 +29,7 @@ This input is propagated through 5 layers of convolution and pooling, followed b
 2. *m x m* neurons : Each element is a combination of PWM frequency of left and right motors
 
 Squared loss is used as objective function for the final layer.
+
+## References
+
+1. [LAGR :  Learning Applied to Ground Robotics](http://www.cs.nyu.edu/~yann/research/lagr/)
